@@ -1,0 +1,5 @@
+{
+    "name": "Jekyll github pages",
+    "build": { "dockerfile": "Dockerfile" },
+    "forwardPorts": [4000]
+}
