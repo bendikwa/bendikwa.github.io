@@ -1,5 +1,6 @@
 {
     "name": "Jekyll github pages",
     "build": { "dockerfile": "Dockerfile" },
-    "forwardPorts": [4000]
+    "forwardPorts": [4000],
+    "postCreateCommand": "git config --global --unset gpg.ssh.program"
 }
