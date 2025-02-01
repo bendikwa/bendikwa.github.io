@@ -19,7 +19,7 @@ locale                   : "nb-NO"
 rtl                      : # true, false (default) # turns direction of the page into right to left for RTL languages
 title                    : "Overcomplicated"
 title_separator          : "-"
-subtitle                 : # site tagline that appears below site title in masthead
+subtitle                 : "A collection of ways I solve everyday issues, usually way to complicated."
 name                     : "Bendik Wang Andreassen"
 description              : "A collection of ways I solve everyday issues, usually way to complicated."
 url                      : "https://bendikwa.github.io"
@@ -114,16 +114,19 @@ analytics:
 # Site Author
 author:
   name             : "Bendik Wang Andreassen"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/assets/images/bendik.jpg"
   bio              : "Nerd"
   location         : "Oslo, Norway"
   links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      # url: "mailto:your.name@email.com"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/bendikwa"
+    - label: "Bluesky"
+      icon: "fab fa-fw fa-bluesky"
+      url: "https://bsky.app/profile/bendikwa.com"
+    - label: "LinkedIN"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/bendik-w-andreassen/"
 
 # Site Footer
 footer:
@@ -131,6 +134,12 @@ footer:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/bendikwa"
+    - label: "Bluesky"
+      icon: "fab fa-fw fa-bluesky"
+      url: "https://bsky.app/profile/bendikwa.com"
+    - label: "LinkedIN"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/bendik-w-andreassen/"
 
 
 # Reading Files
