@@ -116,7 +116,10 @@ analytics:
 author:
   name             : "Bendik Wang Andreassen"
   avatar           : "/assets/images/bendik.jpg"
-  bio              : "Nerd"
+  bio              : >-
+    Father, husband, nerd, builder.<br>
+    Loves microcontrollers, home automation and computers.<br>
+    Tries to solve everything with either code or power tools.
   location         : "Oslo, Norway"
   links:
     - label: "GitHub"
