@@ -1,6 +1,6 @@
 # Ruby Gem
 *.gem
-.bundle
+**/.bundle
 Gemfile.lock
 **/vendor/bundle
 
