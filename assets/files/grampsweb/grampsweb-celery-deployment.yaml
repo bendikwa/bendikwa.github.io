@@ -1,0 +1,77 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: grampsweb-celery
+  name: grampsweb-celery
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: grampsweb-celery
+  template:
+    metadata:
+      labels:
+        app: grampsweb-celery
+    spec:
+      containers:
+        - args:
+            - celery
+            - -A
+            - gramps_webapi.celery
+            - worker
+            - --loglevel=INFO
+            - --concurrency=2
+          env:
+            - name: GRAMPSWEB_CELERY_CONFIG__broker_url
+              value: redis://grampsweb-redis:6379/0
+            - name: GRAMPSWEB_CELERY_CONFIG__result_backend
+              value: redis://grampsweb-redis:6379/0
+            - name: GRAMPSWEB_RATELIMIT_STORAGE_URI
+              value: redis://grampsweb-redis:6379/1
+            - name: GRAMPSWEB_TREE
+              value: Gramps Web
+          image: ghcr.io/gramps-project/grampsweb:latest
+          name: grampsweb-celery
+          volumeMounts:
+            - mountPath: /app/users
+              name: gramps-users
+            - mountPath: /app/indexdir
+              name: gramps-index
+            - mountPath: /app/thumbnail_cache
+              name: gramps-thumb-cache
+            - mountPath: /app/cache
+              name: gramps-cache
+            - mountPath: /app/secret
+              name: gramps-secret
+            - mountPath: /root/.gramps/grampsdb
+              name: gramps-db
+            - mountPath: /app/media
+              name: gramps-media
+            - mountPath: /tmp
+              name: gramps-tmp
+      volumes:
+        - name: gramps-users
+          persistentVolumeClaim:
+            claimName: gramps-users
+        - name: gramps-index
+          persistentVolumeClaim:
+            claimName: gramps-index
+        - name: gramps-thumb-cache
+          persistentVolumeClaim:
+            claimName: gramps-thumb-cache
+        - name: gramps-cache
+          persistentVolumeClaim:
+            claimName: gramps-cache
+        - name: gramps-secret
+          persistentVolumeClaim:
+            claimName: gramps-secret
+        - name: gramps-db
+          persistentVolumeClaim:
+            claimName: gramps-db
+        - name: gramps-media
+          persistentVolumeClaim:
+            claimName: gramps-media
+        - name: gramps-tmp
+          persistentVolumeClaim:
+            claimName: gramps-tmp

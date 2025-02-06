@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: grampsweb
+  name: grampsweb
+spec:
+  ports:
+    - name: "80"
+      port: 80
+      targetPort: 5000
+  selector:
+    app: grampsweb

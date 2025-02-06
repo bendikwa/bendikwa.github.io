@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: grampsweb-redis
+  name: grampsweb-redis
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: grampsweb-redis
+  template:
+    metadata:
+      labels:
+        app: grampsweb-redis
+    spec:
+      containers:
+        - image: docker.io/library/redis:7.2.4-alpine
+          name: grampsweb-redis
