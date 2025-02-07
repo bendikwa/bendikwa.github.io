@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: gramps_users
+  name: gramps-users
 spec:
   accessModes:
     - ReadWriteOnce
@@ -12,7 +12,7 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: gramps_index
+  name: gramps-index
 spec:
   accessModes:
     - ReadWriteOnce
@@ -23,7 +23,7 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: gramps_thumb_cache
+  name: gramps-thumb-cache
 spec:
   accessModes:
     - ReadWriteOnce
@@ -34,7 +34,7 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: gramps_cache
+  name: gramps-cache
 spec:
   accessModes:
     - ReadWriteOnce
@@ -45,7 +45,7 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: gramps_secret
+  name: gramps-secret
 spec:
   accessModes:
     - ReadWriteOnce
@@ -56,7 +56,7 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: gramps_db
+  name: gramps-db
 spec:
   accessModes:
     - ReadWriteOnce
@@ -67,7 +67,7 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: gramps_media
+  name: gramps-media
 spec:
   accessModes:
     - ReadWriteOnce
@@ -78,7 +78,7 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: gramps_tmp
+  name: gramps-tmp
 spec:
   accessModes:
     - ReadWriteOnce

@@ -333,14 +333,14 @@ spec:
 {% endhighlight %}
 
 Repeat for all the volumes:
-- gramps_users
-- gramps_index
-- gramps_thumb_cache
-- gramps_cache
-- gramps_secret
-- gramps_db
-- gramps_media
-- gramps_tmp
+- gramps-users
+- gramps-index
+- gramps-thumb-cache
+- gramps-cache
+- gramps-secret
+- gramps-db
+- gramps-media
+- gramps-tmp
 
 You can add multiple Kubernetes objects to a file, and to keep it practical, you can add all the vilumes to one file. See [grampsweb-all-pvcs.yaml]({{ site.url }}{{ site.baseurl }}/assets/files/grampsweb/grampsweb-all-pvcs.yaml)
 
