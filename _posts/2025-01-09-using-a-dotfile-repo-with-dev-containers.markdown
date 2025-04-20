@@ -39,4 +39,4 @@ For me the finished config looks something like this:
 <img src="{{ site.url }}{{ site.baseurl }}/assets/images/dotfiles/settings.png" alt="Image showing the settings section for dotfiles in the configuration of the Dev container plugin">
 
 # 5 - Profit!
-From now on all `Dev containers` built by the plugion will have your dotfiles in them from the start.
+From now on all `Dev containers` built by the plugin will have your dotfiles in them from the start.
