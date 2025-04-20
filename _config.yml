@@ -61,8 +61,8 @@ comments:
     lang                 : # "en" (default)
     lazy                 : # true, false # Loading of the comments will be deferred until the user scrolls near the comments container.
   staticman:
-    branch               : # "master"
-    endpoint             : # "https://{your Staticman v3 API}/v3/entry/github/"
+    branch               : "main"
+    endpoint             : "https://complicated-comments.bendikwa.com/api/handle/form"
 reCaptcha:
   siteKey                :
   secret                 :
@@ -322,6 +322,6 @@ defaults:
       layout: single
       author_profile: true
       read_time: true
-      comments: # true
+      comments: true
       share: true
       related: true
