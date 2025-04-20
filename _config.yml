@@ -36,7 +36,7 @@ copyright                : # "copyright" name, defaults to site.title
 copyright_url            : # "copyright" URL, defaults to site.url
 comments:
   provider               : "staticman_v2"
-  staticman_v2:
+  staticman:
     branch               : "main"
     endpoint             : "https://complicated-comments.bendikwa.com/api/handle/form/"
 reCaptcha:
