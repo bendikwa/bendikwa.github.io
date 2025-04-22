@@ -342,7 +342,7 @@ Repeat for all the volumes:
 - gramps-media
 - gramps-tmp
 
-You can add multiple Kubernetes objects to a file, and to keep it practical, you can add all the vilumes to one file. See [grampsweb-all-pvcs.yaml]({{ site.url }}{{ site.baseurl }}/assets/files/grampsweb/grampsweb-all-pvcs.yaml)
+You can add multiple Kubernetes objects to a file, and to keep it practical, you can add all the volumes to one file. See [grampsweb-all-pvcs.yaml]({{ site.url }}{{ site.baseurl }}/assets/files/grampsweb/grampsweb-all-pvcs.yaml)
 
 # Putting it all together
 
