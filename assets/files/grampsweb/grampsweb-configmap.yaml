@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: grampsweb
+data:
+  GRAMPSWEB_CELERY_CONFIG__broker_url: "redis://grampsweb-redis:6379/0"
+  GRAMPSWEB_CELERY_CONFIG__result_backend: "redis://grampsweb-redis:6379/0"
+  GRAMPSWEB_RATELIMIT_STORAGE_URI: "redis://grampsweb-redis:6379/1"
+  GRAMPSWEB_TREE: "Gramps Web"
