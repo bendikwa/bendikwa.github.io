@@ -30,7 +30,7 @@ data:
 
 We can now replace the individual environment variable definitions in [grampsweb-deployment.yaml]({{ site.url }}{{ site.baseurl }}/assets/files/grampsweb/grampsweb-deployment.yaml) and [grampsweb-celery-deployment.yaml]({{ site.url }}{{ site.baseurl }}/assets/files/grampsweb/grampsweb-celery-deployment.yaml) with an entry to mount the ConfigMap:
 
-## Grampsweb
+## Grampsweb:
 
 {% highlight yaml %}
 apiVersion: apps/v1
