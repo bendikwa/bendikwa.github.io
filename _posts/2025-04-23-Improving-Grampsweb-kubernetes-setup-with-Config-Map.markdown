@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "Improving Grampsweb kubernetes setup with Config Map and secret"
+title:  "Improving Grampsweb kubernetes setup with ConfigMap"
 date:   2025-04-23 11:32:00 +0100
 categories: Kubernetes Grampsweb genealogy
 ---
