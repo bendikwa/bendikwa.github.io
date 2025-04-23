@@ -1,7 +1,7 @@
 ---
 layout: single
 title:  "Improving Grampsweb kubernetes setup with Config Map and secret"
-date:   2025-04-23 12:32:00 +0100
+date:   2025-04-23 11:32:00 +0100
 categories: Kubernetes Grampsweb genealogy
 ---
 Let's improve the basic setup we did in [Deploying Grampsweb on Kubernetes](https://complicated.bendikwa.com/kubernetes/grampsweb/genealogy/deploying-grampsweb-on-kubernetes/) by moving the configuration into a configmap that can be shared between Grampsweb and Celery
@@ -186,7 +186,7 @@ spec:
 # Deploying:
 
 ## ConfigMap:
-First we must deploy the ConfigMap. Remember to deploy it to the same namespace as Grampsweb, using the `-n` flag with `kubectl` if you want to a diffrent namespace than `default`:
+First we must deploy the ConfigMap. Remember to deploy it to the same namespace as Grampsweb, using the `-n` flag with `kubectl` if you want to a different namespace than `default`:
 
 {% highlight shell %}
 kubectl apply -f grampsweb-configmap.yaml
