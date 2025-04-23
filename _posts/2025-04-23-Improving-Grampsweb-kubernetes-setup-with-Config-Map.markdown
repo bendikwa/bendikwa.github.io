@@ -217,4 +217,4 @@ deployment.apps/grampsweb created
 # Profit!
 
 From now on we have a single place to put configuration for our Grampsweb instance. Remember to restart both the Celery and the Grampsweb pods when updating the ConfigMap.
-The ConfigMap is made for `non-confidential` data. For sensitive values, use a [secret] https://kubernetes.io/docs/concepts/configuration/secret/
+The ConfigMap is made for `non-confidential` data. For sensitive values, use a [secret](https://kubernetes.io/docs/concepts/configuration/secret/)
