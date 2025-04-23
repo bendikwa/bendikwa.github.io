@@ -464,4 +464,4 @@ Replace ISSUER, HOSTNAME, and SECRET_NAME with correct values for your setup.
 
 # Profit!
 
-There are, of course, many things you can do to improve the setup. Securing the redis instance is one, moving common `Grampsweb` config to a `Config Map` is another, but this covers the basic exercise of getting your instance running.
+There are, of course, many things you can do to improve the setup. Securing the redis instance is one, [moving common Grampsweb config to a ConfigMap](https://complicated.bendikwa.com/kubernetes/grampsweb/genealogy/Improving-Grampsweb-kubernetes-setup-with-Config-Map/) is another, but this covers the basic exercise of getting your instance running.
