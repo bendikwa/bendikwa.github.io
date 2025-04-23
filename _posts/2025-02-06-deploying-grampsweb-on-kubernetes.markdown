@@ -384,9 +384,13 @@ deployment.apps/grampsweb-redis created
 service/grampsweb-redis created
 {% endhighlight %}
 
-Tail the logs and wait for Redis to finish start up
+Tail the logs of the Redis container and wait for it to finish start up
 {% highlight shell %}
-... Ready to accept connections tcp
+kubectl get pod -l app=grampsweb-redis
+NAME                               READY   STATUS    RESTARTS   AGE
+grampsweb-redis-7bb856456b-nhxl2   1/1     Running   0          10m
+kubectl logs -f grampsweb-redis-7bb856456b-nhxl2
+<timestamp> Ready to accept connections tcp
 {% endhighlight %}
 
 ## Deploy Gampsweb Celery
@@ -395,9 +399,13 @@ kubectl apply -f grampsweb-celery-deployment.yaml
 deployment.apps/grampsweb-celery created
 {% endhighlight %}
 
-Tail the logs and wait for grampsweb-celery to finish start up
+Tail the logs of the container and wait for grampsweb-celery to finish start up
 {% highlight shell %}
-... celery@grampsweb-celery-<pod_name> ready.
+kubectl get pod -l app=grampsweb-celery
+NAME                               READY   STATUS    RESTARTS   AGE
+grampsweb-celery-fbf679f5c-m96md   1/1     Running   0          10m
+kubectl logs -f grampsweb-celery-fbf679f5c-m96md
+<timestamp> celery@grampsweb-celery-fbf679f5c-m96md ready.
 {% endhighlight %}
 
 ## Deploy Grampsweb
