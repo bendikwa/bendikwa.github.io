@@ -466,7 +466,7 @@ Replace ISSUER, HOSTNAME, and SECRET_NAME with correct values for your setup.
 
 There are, of course, many things you can do to improve the setup like:
 - Securing the redis instance
-- [Moving common Grampsweb config to a ConfigMap]({% link _posts/2025-04-23-Improving-Grampsweb-kubernetes-setup-with-Config-Map.markdown %})
-- Using [a secret]({% link _posts/2025-04-24-Improving-Grampsweb-kubernetes-setup-with-Secret.markdown %}) for passwords and keys
+- [Moving common Grampsweb config to a ConfigMap]({% link _posts/2025-04-23-Improving-Grampsweb-kubernetes-setup-with-a-Config-Map.markdown %})
+- Using [a secret]({% link _posts/2025-04-24-Improving-Grampsweb-kubernetes-setup-with-a-Secret.markdown %}) for passwords and keys
 
 but this covers the basic exercise of getting your instance running.

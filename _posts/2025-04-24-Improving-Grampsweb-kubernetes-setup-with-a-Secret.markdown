@@ -1,10 +1,10 @@
 ---
 layout: single
-title:  "Improving Grampsweb kubernetes setup with Secret"
+title:  "Improving Grampsweb kubernetes setup with a Secret"
 date:   2025-04-24 08:15:00 +0100
 categories: Kubernetes Grampsweb genealogy
 ---
-We have [previously]({% link _posts/2025-04-23-Improving-Grampsweb-kubernetes-setup-with-Config-Map.markdown %}) moved all `non-confidential` configuration to a `ConfigMap`, now we will add a [Secret](https://kubernetes.io/docs/concepts/configuration/secret/).
+We have [previously]({% link _posts/2025-04-23-Improving-Grampsweb-kubernetes-setup-with-a-Config-Map.markdown %}) moved all `non-confidential` configuration to a `ConfigMap`, now we will add a [Secret](https://kubernetes.io/docs/concepts/configuration/secret/).
 
 # The flask secret key
 Looking at the [docker-entrypoint.sh](https://github.com/gramps-project/gramps-web-api/blob/8f1ef9359cec56b4dbeb229bf65bbf90a7386393/docker-entrypoint.sh#L5) it attempts to read the `flask secret key` from `GRAMPSWEB_SECRET_KEY` before using a file on the shared volume mounted at `/app/secret`
