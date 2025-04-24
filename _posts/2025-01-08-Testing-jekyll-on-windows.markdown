@@ -19,7 +19,7 @@ For me, the solution is to use a [Dev container][dev-containers] to set up a Lin
 
 # Prepare your repository:
 For this guide, we will start with an empty repository.
-If you plan to publish this site as `GitHub Pages` later, you might want to start by creating a repo named <your-github-username>.github.io as described under `Creating a repository for your site` in [this guide][gh-jekyll-guide].
+If you plan to publish this site as `GitHub Pages` later, you might want to start by creating a repo named `your-github-username.github.io` as described under `Creating a repository for your site` in [this guide][gh-jekyll-guide].
 
 After you have created the repo, clone it locally, and open it in `VSCode`.
 
@@ -154,7 +154,7 @@ If you want to use a newer `Jekyll` version, or want to use other plugins than t
 
 This is just a simple example of how you can use `Dev containers`. It is a very powerful tool in any project where you need a specific environment to run tools or test code in.
 
-When building and deploying the `Dev container`, some things happen behind the scenes that are worth knowing about. One of them is that your local (`Windows`) `.gitconfig` is copied into the `Dev container`. If you, like me, have some `Windows` specific configuration in it (I use the [1 Password SSH Agent](https://developer.1password.com/docs/ssh/agent/) to sign my commits in `GIT` using my `SSH key`), things might not work as you want it to. You might also have other `dotfiles` you want to have loaded into the environment like aliases etc. One way of solving this is to create a separate repository containing your dotfiles and adding that to the configuration of the `Dev container plugin`. More on that here: <Link>
+When building and deploying the `Dev container`, some things happen behind the scenes that are worth knowing about. One of them is that your local (`Windows`) `.gitconfig` is copied into the `Dev container`. If you, like me, have some `Windows` specific configuration in it (I use the [1 Password SSH Agent](https://developer.1password.com/docs/ssh/agent/) to sign my commits in `GIT` using my `SSH key`), things might not work as you want it to. You might also have other `dotfiles` you want to have loaded into the environment like aliases etc. One way of solving this is to create a separate repository containing your dotfiles and adding that to the configuration of the `Dev container plugin`. More on that here: [Using a dotfile repo with Dev containers]({% link _posts/2025-01-09-using-a-dotfile-repo-with-dev-containers.markdown %})
 
 
 [jekyll]: https://jekyllrb.com/
