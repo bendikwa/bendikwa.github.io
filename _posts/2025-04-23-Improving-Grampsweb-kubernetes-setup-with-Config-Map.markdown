@@ -4,7 +4,7 @@ title:  "Improving Grampsweb kubernetes setup with ConfigMap"
 date:   2025-04-23 11:32:00 +0100
 categories: Kubernetes Grampsweb genealogy
 ---
-Let's improve the basic setup we did in [Deploying Grampsweb on Kubernetes](https://complicated.bendikwa.com/kubernetes/grampsweb/genealogy/deploying-grampsweb-on-kubernetes/) by moving the configuration into a configmap that can be shared between Grampsweb and Celery
+Let's improve the basic setup we did in [Deploying Grampsweb on Kubernetes]({% link _posts/2025-02-06-deploying-grampsweb-on-kubernetes.markdown %}) by moving the configuration into a configmap that can be shared between Grampsweb and Celery
 
 # The ConfigMap:
 A Kubernetes [ConfigMap](https://kubernetes.io/docs/concepts/configuration/configmap/) object holds `non-confidential` key-value pairs that can be consumed from Pods. 
@@ -24,11 +24,11 @@ data:
   GRAMPSWEB_TREE: "Gramps Web"
 {% endhighlight %}
 
-[grampsweb-configmap.yaml]({{ site.url }}{{ site.baseurl }}/assets/files/grampsweb/grampsweb-configmap.yaml)
+[grampsweb-configmap.yaml]({% link /assets/files/grampsweb/grampsweb-configmap.yaml %})
 
 # Mounting the ConfigMap:
 
-We can now replace the individual environment variable definitions in [grampsweb-deployment.yaml]({{ site.url }}{{ site.baseurl }}/assets/files/grampsweb/grampsweb-deployment.yaml) and [grampsweb-celery-deployment.yaml]({{ site.url }}{{ site.baseurl }}/assets/files/grampsweb/grampsweb-celery-deployment.yaml) with an entry to mount the ConfigMap:
+We can now replace the individual environment variable definitions in [grampsweb-deployment.yaml]({% link /assets/files/grampsweb/grampsweb-deployment.yaml %}) and [grampsweb-celery-deployment.yaml]({% link /assets/files/grampsweb/grampsweb-celery-deployment.yaml %}) with an entry to mount the ConfigMap:
 
 ## Grampsweb:
 
@@ -102,7 +102,7 @@ spec:
             claimName: gramps-tmp
 {% endhighlight %}
 
-[grampsweb-deployment-with-configmap.yaml]({{ site.url }}{{ site.baseurl }}/assets/files/grampsweb/grampsweb-deployment-with-configmap.yaml)
+[grampsweb-deployment-with-configmap.yaml]({% link /assets/files/grampsweb/grampsweb-deployment-with-configmap.yaml %})
 
 ## Grampsweb Celery:
 
@@ -181,7 +181,7 @@ spec:
 
 {% endhighlight %}
 
-[grampsweb-celery-deployment-with-configmap.yaml]({{ site.url }}{{ site.baseurl }}/assets/files/grampsweb/grampsweb-celery-deployment-with-configmap.yaml)
+[grampsweb-celery-deployment-with-configmap.yaml]({% link /assets/files/grampsweb/grampsweb-celery-deployment-with-configmap.yaml %})
 
 # Deploying:
 

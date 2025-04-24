@@ -134,7 +134,7 @@ spec:
             claimName: gramps-tmp
 {% endhighlight %}
 
-[grampsweb-deployment.yaml]({{ site.url }}{{ site.baseurl }}/assets/files/grampsweb/grampsweb-deployment.yaml)
+[grampsweb-deployment.yaml]({% link /assets/files/grampsweb/grampsweb-deployment.yaml %})
 
 # Grampsweb Celery:
 
@@ -232,7 +232,7 @@ spec:
             claimName: gramps-tmp
 {% endhighlight %}
 
-[grampsweb-celery-deployment.yaml]({{ site.url }}{{ site.baseurl }}/assets/files/grampsweb/grampsweb-celery-deployment.yaml)
+[grampsweb-celery-deployment.yaml]({% link /assets/files/grampsweb/grampsweb-celery-deployment.yaml %})
 
 # Grampsweb Redis
 
@@ -267,7 +267,7 @@ spec:
           image: docker.io/library/redis:7.2.4-alpine
 {% endhighlight %}
 
-[grampsweb-redis-deployment.yaml]({{ site.url }}{{ site.baseurl }}/assets/files/grampsweb/grampsweb-redis-deployment.yaml)
+[grampsweb-redis-deployment.yaml]({% link /assets/files/grampsweb/grampsweb-redis-deployment.yaml %})
 
 # Grampsweb Service
 In addition to the Deployment, we need a `Kubernetes` Service for Grampsweb to route traffic. (not to be confused with `Docker compose`services)
@@ -290,7 +290,7 @@ spec:
 
 This Service will default to the type ClusterIP and will only be accessible inside the cluster.
 
-[grampsweb-service.yaml]({{ site.url }}{{ site.baseurl }}/assets/files/grampsweb/grampsweb-service.yaml)
+[grampsweb-service.yaml]({% link /assets/files/grampsweb/grampsweb-service.yaml %})
 
 # Grampsweb Redis Service
 
@@ -310,7 +310,7 @@ spec:
     app: grampsweb-redis
 {% endhighlight %}
 
-[grampsweb-redis-service.yaml]({{ site.url }}{{ site.baseurl }}/assets/files/grampsweb/grampsweb-redis-service.yaml)
+[grampsweb-redis-service.yaml]({% link /assets/files/grampsweb/grampsweb-redis-service.yaml %})
 
 # Volumes
 We also need to create the volumes defined in docker-compose.yaml.
@@ -342,7 +342,7 @@ Repeat for all the volumes:
 - gramps-media
 - gramps-tmp
 
-You can add multiple Kubernetes objects to a file, and to keep it practical, you can add all the volumes to one file. See [grampsweb-all-pvcs.yaml]({{ site.url }}{{ site.baseurl }}/assets/files/grampsweb/grampsweb-all-pvcs.yaml)
+You can add multiple Kubernetes objects to a file, and to keep it practical, you can add all the volumes to one file. See [grampsweb-all-pvcs.yaml]({% link /assets/files/grampsweb/grampsweb-all-pvcs.yaml %})
 
 # Putting it all together
 
@@ -464,4 +464,9 @@ Replace ISSUER, HOSTNAME, and SECRET_NAME with correct values for your setup.
 
 # Profit!
 
-There are, of course, many things you can do to improve the setup. Securing the redis instance is one, [moving common Grampsweb config to a ConfigMap](https://complicated.bendikwa.com/kubernetes/grampsweb/genealogy/Improving-Grampsweb-kubernetes-setup-with-Config-Map/) is another, but this covers the basic exercise of getting your instance running.
+There are, of course, many things you can do to improve the setup like:
+- Securing the redis instance
+- [Moving common Grampsweb config to a ConfigMap]({% link _posts/2025-04-23-Improving-Grampsweb-kubernetes-setup-with-Config-Map.markdown %})
+- Using [a secret]({% link _posts/2025-04-24-Improving-Grampsweb-kubernetes-setup-with-Secret.markdown %}) for passwords and keys
+
+but this covers the basic exercise of getting your instance running.

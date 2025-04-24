@@ -36,7 +36,7 @@ In `VSCode` go to “File -> Preferences -> Settings”. Under “Extensions”,
 - Target path: The directory that the plugin should clone the repo to.
 
 For me the finished config looks something like this:
-<img src="{{ site.url }}{{ site.baseurl }}/assets/images/dotfiles/settings.png" alt="Image showing the settings section for dotfiles in the configuration of the Dev container plugin">
+<img src="{% link /assets/images/dotfiles/settings.png %}" alt="Image showing the settings section for dotfiles in the configuration of the Dev container plugin">
 
 # 5 - Profit!
 From now on all `Dev containers` built by the plugin will have your dotfiles in them from the start.
