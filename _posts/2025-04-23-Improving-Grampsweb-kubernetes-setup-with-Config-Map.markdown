@@ -7,7 +7,7 @@ categories: Kubernetes Grampsweb genealogy
 Let's improve the basic setup we did in [Deploying Grampsweb on Kubernetes](https://complicated.bendikwa.com/kubernetes/grampsweb/genealogy/deploying-grampsweb-on-kubernetes/) by moving the configuration into a configmap that can be shared between Grampsweb and Celery
 
 # The ConfigMap:
-A Kubernetes ConfigMap object holds `non-confidential` key-value pairs that can be consumed from Pods. 
+A Kubernetes [ConfigMap](https://kubernetes.io/docs/concepts/configuration/configmap/) object holds `non-confidential` key-value pairs that can be consumed from Pods. 
 One way of consuming it is to [mount them as environment variables](https://kubernetes.io/docs/concepts/configuration/configmap/#using-configmaps-as-environment-variables).
 
 Continuing the setup for Grampsweb on Kubernetes, we can improve it by putting all the environment variables defined in [docker-compose](https://raw.githubusercontent.com/gramps-project/gramps-web-docs/main/examples/docker-compose-base/docker-compose.yml) into a new ConfigMap definition:
