@@ -27,7 +27,6 @@ apiVersion: v1
 kind: Secret
 metadata:
   name: grampsweb
-  namespace: gramps
 type: Opaque
 stringData:
   GRAMPSWEB_SECRET_KEY: GzZNcINdZSxrP9QUexOMYjWKJ_UnVt3tozQME0uY8KM
@@ -37,7 +36,7 @@ stringData:
 
 # Mounting the Secret:
 
-We add the `Secret` to the deployments the same way as we did for the `ConfigMap`, and we can now also remove the `gramps-secret` mount:
+We add the `Secret` to the deployments the same way as we did for the `ConfigMap`. We can now also remove the `gramps-secret` volume mount:
 
 ## Grampsweb:
 
@@ -65,20 +64,20 @@ spec:
               name: grampsweb
           - secretRef:
               name: grampsweb
-          image: ghcr.io/gramps-project/grampsweb:latest
-          name: grampsweb
-          ports:
-            - containerPort: 5000
-              protocol: TCP
 ...
 {% endhighlight %}
 
 
-### Remove gramps-secret mount:
+### Remove gramps-secret volume mount:
 {% highlight yaml %}
 ...
             - mountPath: /app/secret
               name: gramps-secret
+...
+
+        - name: gramps-secret
+          persistentVolumeClaim:
+            claimName: gramps-secret
 ...
 {% endhighlight %}
 [grampsweb-deployment-with-secret.yaml]({% link /assets/files/grampsweb/grampsweb-deployment-with-secret.yaml %})
@@ -121,11 +120,16 @@ spec:
 {% endhighlight %}
 
 
-### Remove gramps-secret mount:
+### Remove gramps-secret volume mount:
 {% highlight yaml %}
 ...
             - mountPath: /app/secret
               name: gramps-secret
+...
+
+        - name: gramps-secret
+          persistentVolumeClaim:
+            claimName: gramps-secret
 ...
 {% endhighlight %}
 
@@ -161,6 +165,15 @@ kubectl logs -f grampsweb-celery-fbf679f5c-m96md
 {% highlight shell %}
 kubectl apply -f grampsweb-deployment-with-secret.yaml
 deployment.apps/grampsweb created
+{% endhighlight %}
+
+## Delete Volume
+
+The PersistentVolumeClaim for gramps-secret is no longer needed, and can be deleted. Remember to include the `-n` flag with `kubectl` if you deployed to a different namespace than `default`:
+
+{% highlight shell %}
+kubectl delete PersistentVolumeClaim gramps-secret
+persistentvolumeclaim "gramps-secret" deleted
 {% endhighlight %}
 
 # Profit!
