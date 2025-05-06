@@ -1,0 +1,59 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: grampsweb-import
+spec:
+  template:
+    metadata:
+      labels:
+        app: grampsweb-import
+    spec:
+      containers:
+      - name: grampsweb-import
+        image: ghcr.io/gramps-project/grampsweb:v25.4.1
+        command: []
+        args:
+        - gramps
+        - -C
+        - tree
+        - -i
+        - /tmp/empty-tree.gramps
+        - --config=database.backend:$(GRAMPSWEB_DATABASE_BACKEND)
+        - --config=database.host:$(GRAMPSWEB_DATABASE_HOST)
+        - --config=database.port:$(GRAMPSWEB_DATABASE_PORT)
+        - --username=$(GRAMPSWEB_POSTGRES_USER)
+        - --password=$(GRAMPSWEB_POSTGRES_PASSWORD)
+        envFrom:
+        - configMapRef:
+            name: grampsweb
+        - secretRef:
+            name: grampsweb
+        volumeMounts:
+        - mountPath: /app/thumbnail_cache
+          name: gramps-thumb-cache
+        - mountPath: /app/cache
+          name: gramps-cache
+        - mountPath: /root/.gramps/grampsdb
+          name: gramps-db
+        - mountPath: /app/media
+          name: gramps-media
+        - mountPath: /tmp
+          name: gramps-tmp
+      restartPolicy: Never
+      volumes:
+      - name: gramps-thumb-cache
+        persistentVolumeClaim:
+          claimName: gramps-thumb-cache
+      - name: gramps-cache
+        persistentVolumeClaim:
+          claimName: gramps-cache
+      - name: gramps-db
+        persistentVolumeClaim:
+          claimName: gramps-db
+      - name: gramps-media
+        persistentVolumeClaim:
+          claimName: gramps-media
+      - name: gramps-tmp
+        persistentVolumeClaim:
+          claimName: gramps-tmp
+  backoffLimit: 0
