@@ -4,9 +4,9 @@ title:  "Grampsweb on kubernetes - Part 1: Basic deployment"
 date:   2025-02-06 14:44:00 +0100
 categories: Kubernetes Grampsweb genealogy
 ---
-I am working on documenting my family tree, and as I was searching for a self hosted alternative for the paid options (mainly MyHeritage) I came across [Grampsweb](https://www.grampsweb.org/). It describes itself as “The free, open-source genealogy system for building your family tree – together.”. This sounded perfect for my needs, and I started looking into how to get it running. The official guide uses `Docker Compose`, but let's see how we can get it running in Kubernetes.
+I am working on documenting my family tree, and as I was searching for a self hosted alternative for the paid options (mainly MyHeritage) I came across [Grampsweb](https://www.grampsweb.org/). It describes itself as “The free, open-source genealogy system for building your family tree – together.”. This sounded perfect for my needs, and I started looking into how to get it running. The guide on [https://www.grampsweb.org/](https://www.grampsweb.org/) uses `Docker Compose`, but let's see how we can get it running in Kubernetes.
 
-# The official docker-compose.yaml:
+# The docker-compose.yaml:
 If we look at the example in the [installation docs](https://www.grampsweb.org/install_setup/deployment/), we can see that the [docker-compose.yaml](https://raw.githubusercontent.com/gramps-project/gramps-web-docs/main/examples/docker-compose-base/docker-compose.yml) contains some services and a handful of volumes:
 
 ## Services:
