@@ -4,7 +4,7 @@ title:  "Grampsweb on kubernetes - Part 5: Main family tree database"
 date:   2025-05-17 08:30:00 +0100
 categories: Kubernetes Grampsweb genealogy postgres
 ---
-In [the previous part]({% link _posts/2025-05-17-Grampsweb-on-kubernetes-part4.markdown %}) we configured `Grampsweb` to use external `PostgreSQL` databases for the `Users`and `Search index`. In this part we will replace the default `SQLight` database for the `family tree`.
+In [the previous part]({% link _posts/2025-05-17-Grampsweb-on-kubernetes-part4.markdown %}) we configured `Grampsweb` to use external `PostgreSQL` databases for the `Users` and `Search index`. In this part we will replace the default `SQLight` database for the `family tree`.
 
 This guide is written assuming a new, clean setup. If you already have data in your family tree that you want to keep, you **must** make sure that you have a **working backup**, and **know how to restore it**.
 {: .notice--danger}
