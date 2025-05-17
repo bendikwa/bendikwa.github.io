@@ -4,7 +4,7 @@ title:  "Grampsweb on kubernetes - Part 2: Common ConfigMap"
 date:   2025-04-23 11:32:00 +0100
 categories: Kubernetes Grampsweb genealogy
 ---
-Let's improve the basic setup we did in [Deploying Grampsweb on Kubernetes]({% link _posts/2025-02-06-deploying-grampsweb-on-kubernetes.markdown %}) by moving the configuration into a configmap that can be shared between Grampsweb and Celery
+Let's improve the basic setup we did in [part 1]({% link _posts/2025-02-06-deploying-grampsweb-on-kubernetes.markdown %}) by moving the configuration into a configmap that can be shared between Grampsweb and Celery
 
 # The ConfigMap:
 A Kubernetes [ConfigMap](https://kubernetes.io/docs/concepts/configuration/configmap/) object holds `non-confidential` key-value pairs that can be consumed from Pods. 
