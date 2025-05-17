@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "Deploying Grampsweb on Kubernetes"
+title:  "Grampsweb on kubernetes - Part 1: Basic deployment"
 date:   2025-02-06 14:44:00 +0100
 categories: Kubernetes Grampsweb genealogy
 ---

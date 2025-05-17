@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "Improving Grampsweb kubernetes setup with a Secret"
+title:  "Grampsweb on kubernetes - Part 3: Adding a Secret"
 date:   2025-04-24 08:15:00 +0100
 categories: Kubernetes Grampsweb genealogy
 ---

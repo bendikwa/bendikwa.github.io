@@ -17,7 +17,7 @@ There are tree separate `SQLite` databases used by `Grampsweb` that we can repla
 2. The **Search index**
 3. The **main database** used for storing the `family tree`
 
-**1** and **2** will be covered in this part, **3** will be covered in [part 2]({% link _posts/2025-04-26-Improving-Grampsweb-kubernetes-setup-with-a-Postgres-database-part-2.markdown %})
+**1** and **2** will be covered in this part, **3** will be covered in [part 2]({% link _posts/2025-05-17-Grampsweb-on-kubernetes-part5.markdown %})
 
 # The User database
 First create a `user` and `database` in the `Postgres cluster` for `Grampsweb` to use. They can be named anything you want. For this example let's call the `user` "grampsweb" and the `database` "users".
@@ -154,4 +154,4 @@ persistentvolumeclaim "gramps-index" deleted
 
 # Profit!
 With these changes we now have all our `users` stored in an external `database` that is easy to `back up` and `restore` if needed. We have also removed the dependencies on `shared filesystem` access, something that is an `antipattern` in the world of (mostly) stateless microservices.
-In [part 2]({% link _posts/2025-04-26-Improving-Grampsweb-kubernetes-setup-with-a-Postgres-database-part-2.markdown %}) we will look at replacing the default, file based, `SQLight` database for the `family tree`
+In [the next part]({% link _posts/2025-05-17-Grampsweb-on-kubernetes-part5.markdown %}) we will look at replacing the default, file based, `SQLight` database for the `family tree`
