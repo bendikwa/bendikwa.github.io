@@ -92,7 +92,7 @@ deployment.apps/grampsweb-celery restarted
 
 Tail the logs of `Celery` and wait for it to become ready:
 {% highlight shell %}
-kubectl -logs -f deployment/grampsweb-celery
+kubectl logs deployment/grampsweb-celery
 ...
 <timestamp> celery@grampsweb-celery-fbf679f5c-m96md ready.
 {% endhighlight %}
@@ -138,13 +138,13 @@ deployment.apps/grampsweb-celery configured
 
 this will restart the `Deployments`. To verify that the restart completed, we can tail the log of `Celery` and see that it becomes ready:
 {% highlight shell %}
-kubectl -logs -f deployment/grampsweb-celery
+kubectl logs deployment/grampsweb-celery
 ...
 <timestamp> celery@grampsweb-celery-fbf679f5c-m96md ready.
 {% endhighlight %}
 
 ## Delete Volumes
-The PersistentVolumeClaim for gramps-users and gramps-index are no longer needed, and can be deleted:
+When everything is confirmed working, we no longer need the the PersistentVolumeClaim for gramps-users and gramps-index:
 
 {% highlight shell %}
 kubectl delete PersistentVolumeClaim gramps-users gramps-index
