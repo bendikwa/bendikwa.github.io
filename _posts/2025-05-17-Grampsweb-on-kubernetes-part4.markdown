@@ -17,7 +17,7 @@ There are tree separate `SQLite` databases used by `Grampsweb` that we can repla
 2. The **Search index**
 3. The **main database** used for storing the `family tree`
 
-**1** and **2** will be covered in this part, **3** will be covered in [part 2]({% link _posts/2025-05-17-Grampsweb-on-kubernetes-part5.markdown %})
+**1** and **2** will be covered in this part, **3** will be covered in [part 5]({% link _posts/2025-05-17-Grampsweb-on-kubernetes-part5.markdown %})
 
 # The User database
 First create a `user` and `database` in the `Postgres cluster` for `Grampsweb` to use. They can be named anything you want. For this example let's call the `user` "grampsweb" and the `database` "users".
