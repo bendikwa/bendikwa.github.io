@@ -259,8 +259,6 @@ We can NOT remove the `gramps-db` volume from the `Grampsweb` and `Celery` `Depl
 You can find out which `folders` are associated with which `tree names` in the `gramps-db` volume by looking at the `name.txt` file inside it. It contains the name of that `tree`.
 {: .notice--success}
 
-These are some of the more common `errors` I encountered while setting this up:
-
 ## Password authentication failed for user `user`
 {% highlight shell %}
 ERROR: Database connection failed.
