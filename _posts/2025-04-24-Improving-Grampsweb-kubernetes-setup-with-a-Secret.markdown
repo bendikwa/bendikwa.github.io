@@ -139,7 +139,10 @@ spec:
 # Deploying:
 
 ## Secret:
-First we must deploy the Secret. Remember to deploy it to the same namespace as Grampsweb, using the `-n` flag with `kubectl` if you want to a different namespace than `default`:
+First we must deploy the Secret.
+
+The secret must be deployed to the `namespace` as `Grampsweb`. Add the `-n <namespace>` flag to `kubectl` for all the following commands if you want to deploy to a different `namespace` than `default`
+{: .notice--info}
 
 {% highlight shell %}
 kubectl apply -f grampsweb-secret.yaml
@@ -154,10 +157,8 @@ deployment.apps/grampsweb-celery created
 
 Tail the logs of the container and wait for grampsweb-celery to finish start up
 {% highlight shell %}
-kubectl get pod -l app=grampsweb-celery
-NAME                               READY   STATUS    RESTARTS   AGE
-grampsweb-celery-fbf679f5c-m96md   1/1     Running   0          10m
-kubectl logs -f grampsweb-celery-fbf679f5c-m96md
+kubectl logs deployment/grampsweb-celery
+...
 <timestamp> celery@grampsweb-celery-fbf679f5c-m96md ready.
 {% endhighlight %}
 
