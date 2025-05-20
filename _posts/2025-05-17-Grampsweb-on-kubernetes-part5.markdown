@@ -6,7 +6,7 @@ categories: Kubernetes Grampsweb genealogy postgres
 ---
 In [the previous part]({% link _posts/2025-05-17-Grampsweb-on-kubernetes-part4.markdown %}) we configured `Grampsweb` to use external `PostgreSQL` databases for the `Users` and `Search index`. In this part we will replace the default `SQLight` database for the `family tree`.
 
-This guide was written for Gramps version 5. (up to Grampsweb version v25.4.1). At the time of writing the PosgreSQL addon soes not work with Gramps 6 (Grampsweb version v25.5.0 and beyond)
+This guide was written for Gramps version 5. (up to Grampsweb version v25.4.1). At the time of writing the PosgreSQL addon does not work with Gramps 6 (Grampsweb version v25.5.0 and v25.5.1). A fix is committed, and it should be working again once v25.5.2 is released.
 {: .notice--warning}
 
 This guide is written assuming a new, clean setup. If you already have data in your family tree that you want to keep, you **must** make sure that you have a **working backup**, and **know how to restore it**.
