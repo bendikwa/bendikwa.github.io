@@ -353,9 +353,8 @@ grampsweb-celery-deployment.yaml  grampsweb-redis-deployment.yaml  grampsweb-ser
 grampsweb-deployment.yaml         grampsweb-redis-service.yaml     grampsweb-all-pvcs.yaml
 {% endhighlight %}
 
-Deploying the definitions with kubectl as they are will deploy them in the default namespace, you can change that by adding the namespace flag to the command.
-{: .notice--warning}
-
+Remember to set the `namespace` by adding the `-n <namespace>` flag to `kubectl` for all the following commands if you want to deploy to a different `namespace` than `default`
+{: .notice--info}
 
 Since there is no dependency declaration in native kubernetes objects, it is practical to apply them in separate steps:
 1. The Volumes
@@ -386,10 +385,8 @@ service/grampsweb-redis created
 
 Tail the logs of the Redis container and wait for it to finish start up
 {% highlight shell %}
-kubectl get pod -l app=grampsweb-redis
-NAME                               READY   STATUS    RESTARTS   AGE
-grampsweb-redis-7bb856456b-nhxl2   1/1     Running   0          10m
-kubectl logs -f grampsweb-redis-7bb856456b-nhxl2
+kubectl logs deployment/grampsweb-redis
+...
 <timestamp> Ready to accept connections tcp
 {% endhighlight %}
 
@@ -401,10 +398,8 @@ deployment.apps/grampsweb-celery created
 
 Tail the logs of the container and wait for grampsweb-celery to finish start up
 {% highlight shell %}
-kubectl get pod -l app=grampsweb-celery
-NAME                               READY   STATUS    RESTARTS   AGE
-grampsweb-celery-fbf679f5c-m96md   1/1     Running   0          10m
-kubectl logs -f grampsweb-celery-fbf679f5c-m96md
+kubectl logs deployment/grampsweb-celery
+...
 <timestamp> celery@grampsweb-celery-fbf679f5c-m96md ready.
 {% endhighlight %}
 
@@ -431,6 +426,9 @@ Among some warnings I got two errors in the logs: `assertion 'GDK_IS_SCREEN (scr
 {: .notice--info}
 
 # Ingress traffic
+
+This step will be different based on your setup and what you use as an `ingress controller`. I include mine just as an example.
+{: .notice--info}
 
 In my setup, I use Traefik as `Ingress Controller` and Certbot to add TLS, so all I need is to an an ingress and set up DNS to finalize the setup:
 {% highlight yaml %}
